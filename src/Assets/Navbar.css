@@ -1,0 +1,57 @@
+@import url("http://fonts.cdnfonts.com/css/uncracked-free-trial");
+
+.logo {
+  position: absolute;
+  width: 324px;
+  height: 181px;
+  left: 28px;
+  top: 12px;
+}
+
+.bigButton {
+  width: 151px;
+  height: 58px;
+  font-family: "Uncracked Free Trial", sans-serif;
+  font-size: 36px;
+  color: #6837a6;
+  background: #e7dfea;
+  box-shadow: 0px 4px 4px #f3bd30, 0px 4px 47px #51472f;
+  border: 0;
+  border-radius: 28px;
+}
+
+.miniButton {
+  width: 46px;
+  height: 46px;
+  background: #e7dfea;
+  box-shadow: 0px 4px 4px #f3bd30, 0px 4px 47px #51472f;
+  border-radius: 53px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e7dfea;
+  min-width: 140px;
+  box-shadow: 0px 4px 4px #f3bd30, 0px 4px 47px #51472f;
+  border-radius: 36px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+  font-family: "Uncracked Free Trial", sans-serif;
+  font-size: 20px;
+  color: #6837a6;
+}
+
+button:disabled,
+button[disabled]{
+  color: gray;
+}
