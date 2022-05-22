@@ -194,10 +194,12 @@ export default function Board(props: any) {
       if (number % 2 === 0) {
         rightBoardUI.push(
           <div id={key} className="cellInv">
+            {/*}
             <span className="cellName">
               {horizontal[i]}
               {vertical[j]}
             </span>
+        */}
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -206,10 +208,12 @@ export default function Board(props: any) {
       } else {
         rightBoardUI.push(
           <div id={key} className="cell">
+            {/*}
             <span className="cellName">
               {horizontal[i]}
               {vertical[j]}
             </span>
+            */}
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -1091,6 +1095,7 @@ export default function Board(props: any) {
       <div className="grid grid-cols-4 grid-rows-4 board" onClick={placePiece}>
         {rightBoardUI}
       </div>
+      {/*}
       <div className="selectedPieceContainer">
         <span>Selected piece.</span>
         <div className="ml-2 selectedPiece">
@@ -1101,6 +1106,8 @@ export default function Board(props: any) {
           </div>
         </div>
       </div>
+            */}
+      
       <div
         className="grid grid-cols-4 grid-rows-4 pieces"
         onClick={selectPiece}
