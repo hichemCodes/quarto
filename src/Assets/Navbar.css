@@ -12,7 +12,7 @@
 }
 
 .navContainer{
-width:135px;
+width:234px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -22,7 +22,7 @@ align-items: center;
 .navContainer i {
  font-size: 3rem;
  color: #793a1b;
- margin: 10px 0px 10px 0px;
+ margin: 30px 0px 30px 0px;
 }
 .navcontent {
   display: flex;
@@ -32,8 +32,11 @@ align-items: center;
 }
 
 .logo {
-  width: 130px;
- height: 160px;
+  width: 231px;
+  height: 155px;
+  position: absolute;
+  top: 3px;
+  left: 5px;
   
 }
 

@@ -12,26 +12,18 @@ export default function Cover() {
         },
         confirmButtonText: 'Commancer',
         showLoaderOnConfirm: true,
-        preConfirm: (login) => {
-          return fetch(`//api.github.com/users/${login}`)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error(response.statusText)
-              }
-              return response.json()
-            })
-            .catch(error => {
-              Swal.showValidationMessage(
-                `Request failed: ${error}`
-              )
-            })
+        preConfirm: (name) => {
+            localStorage.setItem('name',name);
         },
         allowOutsideClick: () => !Swal.isLoading()
       }).then((result) => {
         if (result.isConfirmed) {
          
+
             document.getElementsByClassName('cover')[0].style.display = "none";
             document.getElementsByClassName('welcomeMessage')[0].style.display = "block";
+
+
         }
       })
     

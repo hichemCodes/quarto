@@ -58,7 +58,7 @@ export default function Navbar(props: any) {
         </div>
         */}
 
-          <button>
+          <button onClick={()=> document.location.reload()}>
             <i className="fa-solid fa-arrow-rotate-left"></i>
           </button>
       </div>

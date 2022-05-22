@@ -28,20 +28,20 @@ export default function Game() {
       {gameOver.bool ? (
         gameOver.player === Player.HUMAN ? (
           <div className="welcomeMessage">
-              <span>Bonjour, Hichem : Vous avez gagné</span>
+              <span>Bonjour, {localStorage.getItem('name')} : Vous avez gagné</span>
          </div>
         ) : (
           <div className="welcomeMessage">
-              <span>Bonjour, Hichem : Vous avez perdu</span>
+              <span>Bonjour, {localStorage.getItem('name')} : Vous avez perdu</span>
           </div>
         )
       ) : currentPlayer === Player.HUMAN ? (
          <div className="welcomeMessage">
-          <span>Bonjour, Hichem : C'est ton tour</span>
+          <span>Bonjour, {localStorage.getItem('name')} : C'est ton tour</span>
          </div>
       ) : (
           <div className="welcomeMessage">
-            <span>Bonjour, Hichem : C'est le tour de l'ordinature</span>
+            <span>Bonjour, {localStorage.getItem('name')} : C'est le tour de l'ordinature</span>
           </div>
       )}
 

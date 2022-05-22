@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   width: 180vh;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px 0px 120px;
   margin-top: 23vh;
 }
 
@@ -35,7 +35,7 @@
   display: grid;
   place-content: center;
   border-radius: 50%;
-  border: 2px solid #b74a00;
+  border: 4px solid #b74a00;
 }
 
 .cellInv {
@@ -45,7 +45,7 @@
   display: grid;
   place-content: center;
   border-radius: 50%;
-  border: 2px solid #b74a00;
+  border: 4px solid #b74a00;
 }
 
 .cellName {
@@ -66,15 +66,15 @@
 .board {
   width: 78vh !important;
   height: 77vh !important;
+  transform:perspective(var(--p, 1029px)) rotateX(var(--x, 62deg)) rotateY(var(--y, 0deg)) rotateZ(var(--z, 143deg)) translate3d(var(--tx, 0px), var(--ty, 0px), var(--tz, 19px));
 }
-
 .pieces {
  
 }
 
 .pieceContainer {
   width: 105px;
-  height: 105px;
+  height: 135px;
   /*//background: #e8edf9;
   //color: #b7c0d8;*/
   display: grid;
