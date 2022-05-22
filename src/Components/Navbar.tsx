@@ -18,9 +18,7 @@ export default function Navbar(props: any) {
         <div>
           <button className="bigButton">Home</button>
         </div>
-        <div>
-          <button className="bigButton">Rules</button>
-        </div>
+       
         <div className="dropdown">
           <button className="bigButton">Difficulty</button>
           <div className="dropdown-content">
