@@ -19,7 +19,7 @@ export default function Game() {
           setDifficulty(diff);
         }}
       />
-      {gameOver.bool ? (
+      {/*gameOver.bool ? (
         gameOver.player === Player.HUMAN ? (
           <div className="instructions">You won.</div>
         ) : (
@@ -29,7 +29,7 @@ export default function Game() {
         <div className="instructions">Your turn.</div>
       ) : (
         <div className="instructions">Ai turn.</div>
-      )}
+      )*/}
 
       <Board
         difficulty={difficulty}

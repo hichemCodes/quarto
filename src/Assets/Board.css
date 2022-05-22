@@ -1,5 +1,13 @@
 @import url("http://fonts.cdnfonts.com/css/uncracked-free-trial");
 
+
+
+.boardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .cell {
   width: 108px;
   height: 108px;
@@ -34,29 +42,18 @@
 }
 
 .board {
-  position: absolute;
-  top: 68%;
-  right: -4%;
-  //margin-right: -50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
+  
 }
 
 .pieces {
-  position: absolute;
-  top: 68%;
-  left: 25%;
-  //margin-right: -50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23B7C0D8FF' stroke-width='4' stroke-dasharray='20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+ 
 }
 
 .pieceContainer {
   width: 105px;
   height: 105px;
-  //background: #e8edf9;
-  //color: #b7c0d8;
+  /*//background: #e8edf9;
+  //color: #b7c0d8;*/
   display: grid;
   place-content: center;
 }
@@ -66,18 +63,9 @@
   box-sizing: border-box;
 }
 
-.aPiece {
-  //width: 75px;
-  //height: 75px;
-}
 
 .selectedPieceContainer {
-  position: absolute;
-  top: 68%;
-  left: 50%;
-  //margin-right: -50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
+ 
   font-family: "Uncracked Free Trial";
   font-size: 36px;
   text-align: center;
