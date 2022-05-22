@@ -8,11 +8,29 @@
   align-items: center;
   width: 180vh;
   padding: 0px 20px 0px 20px;
+  margin-top: 23vh;
 }
 
+.welcomeMessage{
+  position: absolute;
+  font-size: 2.5rem;
+  top: 30px;
+  left:0;
+  right:0;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  position: absolute;
+  width: 40%;
+  color: #b74a00;  
+  display: none;
+}
+
+
 .cell {
-  width: 108px;
-  height: 108px;
+  width: 115px;
+  height: 115px;
   color: #e8edf9;
   display: grid;
   place-content: center;
@@ -21,8 +39,8 @@
 }
 
 .cellInv {
-  width: 108px;
-  height: 108px;
+  width: 115px;
+  height: 115px;
   color: #b7c0d8;
   display: grid;
   place-content: center;
@@ -46,8 +64,8 @@
 }
 
 .board {
-  width: 70vh !important;
-  height: 70vh !important;
+  width: 78vh !important;
+  height: 77vh !important;
 }
 
 .pieces {

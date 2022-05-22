@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Board from "../Components/Board";
 import Navbar from "../Components/Navbar";
+import Cover from "../Components/Cover";
 import "./../Assets/Game.css";
 import { Player } from "../Types/Piece";
 
@@ -12,24 +13,37 @@ export default function Game() {
     player: Player.NOTFILLED,
   });
 
+
+  
+
+
   return (
     <>
+       <Cover/>
       <Navbar
         setDifficulty={(diff: any) => {
           setDifficulty(diff);
         }}
       />
-      {/*gameOver.bool ? (
+      {gameOver.bool ? (
         gameOver.player === Player.HUMAN ? (
-          <div className="instructions">You won.</div>
+          <div className="welcomeMessage">
+              <span>Bonjour, Hichem : Vous avez gagné</span>
+         </div>
         ) : (
-          <div className="instructions">You Lost.</div>
+          <div className="welcomeMessage">
+              <span>Bonjour, Hichem : Vous avez perdu</span>
+          </div>
         )
       ) : currentPlayer === Player.HUMAN ? (
-        <div className="instructions">Your turn.</div>
+         <div className="welcomeMessage">
+          <span>Bonjour, Hichem : C'est ton tour</span>
+         </div>
       ) : (
-        <div className="instructions">Ai turn.</div>
-      )*/}
+          <div className="welcomeMessage">
+            <span>Bonjour, Hichem : C'est le tour de l'ordinature</span>
+          </div>
+      )}
 
       <Board
         difficulty={difficulty}
