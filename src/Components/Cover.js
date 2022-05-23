@@ -5,7 +5,7 @@ export default function Cover() {
 
   useEffect(() => {
     Swal.fire({
-        title: 'Veuillez saisir votre Nom avant de jouer',
+        title: 'Veuillez saisir votre nom avant de jouer',
         input: 'text',
         inputAttributes: {
           autocapitalize: 'off'

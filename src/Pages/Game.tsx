@@ -45,6 +45,9 @@ export default function Game() {
           </div>
       )}
 
+
+
+
       <Board
         difficulty={difficulty}
         setTurn={() => {
@@ -63,6 +66,19 @@ export default function Game() {
         currentPlayer={currentPlayer}
         gameOver={gameOver}
       />
+
+        {gameOver.bool ? (
+        gameOver.player === Player.HUMAN ? (
+          <div className="instructions">Vous avez gagné</div>
+        ) : (
+          <div className="instructions">Vous avez perdu</div>
+        )
+      ) : currentPlayer === Player.HUMAN ? (
+        <div className="instructions"><p>Votre tour</p></div>
+      ) : (
+        <div className="instructions">Au tour de IA </div>
+      )}
+
     </>
   );
 }

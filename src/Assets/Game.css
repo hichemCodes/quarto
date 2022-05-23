@@ -3,17 +3,16 @@
 .instructions {
   font-family: "Uncracked Free Trial", sans-serif;
   text-align: center;
-  color: #6837a6;
+  color: #793a1b;
   font-size: 36px;
-  width: 342px;
+  width: 200px;
   height: 73px;
-  background: #e8edf9;
-  box-shadow: 0px 4px 4px #632fa3;
+  box-shadow: 3px 3px 3px 3px #793a1b;
   border-radius: 16px;
   padding: 10px;
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 75%;
+  left: 9%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   position: absolute;

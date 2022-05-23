@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import quartoGame from "./../Assets/quartoGame.png";
-import replay from "./../Assets/Rotate.png";
-import mute from "./../Assets/Mute.png";
 import "./../Assets/Navbar.css";
 
 export default function Navbar(props: any) {
