@@ -13,8 +13,7 @@ export default function Navbar(props: any) {
     <div className="navContainer">
        <img alt="" src={quartoGame} className="logo" />
       <div className="navcontent">
-      <button ><i className="fa-solid fa-ranking-star"></i></button>
-        {/* 
+      
         <div className="dropdown">
           <button ><i className="fa-solid fa-ranking-star"></i></button>
           <button></button>
@@ -54,7 +53,6 @@ export default function Navbar(props: any) {
             </button>
           </div>
         </div>
-        */}
 
           <button onClick={()=> document.location.reload()}>
             <i className="fa-solid fa-arrow-rotate-left"></i>
