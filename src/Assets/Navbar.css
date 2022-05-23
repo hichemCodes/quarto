@@ -1,45 +1,11 @@
 @import url("http://fonts.cdnfonts.com/css/uncracked-free-trial");
 
-
-
-.cover {
-   position: absolute;
-   top: 0px ;
-   left :0px;
-   width: 100%;
-   height: 100%;
-   background: #000000d9;
-}
-
-.navContainer{
-width:234px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.navContainer i {
- font-size: 3rem;
- color: #793a1b;
- margin: 30px 0px 30px 0px;
-}
-.navcontent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: absolute;
-  top: 80%;
-  left: 5%;
-}
-
 .logo {
-  width: 231px;
-  height: 155px;
   position: absolute;
-  top: 3px;
-  left: 5px;
-  
+  width: 324px;
+  height: 181px;
+  left: 28px;
+  top: 12px;
 }
 
 .bigButton {
@@ -70,6 +36,7 @@ align-items: center;
 
 .dropdown-content {
   display: none;
+  position: absolute;
   background-color: #e7dfea;
   min-width: 140px;
   box-shadow: 0px 4px 4px #f3bd30, 0px 4px 47px #51472f;

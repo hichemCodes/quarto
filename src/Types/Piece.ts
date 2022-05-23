@@ -5,6 +5,13 @@ export enum Status {
   UNAVAILABLE,
 }
 
+export enum Niv {
+  NIV1,
+  NIV2,
+  NIV3,
+  NIV4,
+}
+
 export enum Shape {
   CIRCLE,
   RECTANGLE,

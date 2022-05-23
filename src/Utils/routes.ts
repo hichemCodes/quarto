@@ -1,3 +1,4 @@
+import HomePage from "../Pages/Homepage";
 import Game from "../Pages/Game";
 
 type routesType = {
@@ -7,7 +8,11 @@ type routesType = {
 }[];
 
 const routes: routesType = [
- {
+  {
+    name: "Homepage",
+    path: "/HomePage",
+    element: HomePage,
+  },{
     name: "Game",
     path: "/",
     element: Game,

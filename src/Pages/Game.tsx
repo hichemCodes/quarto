@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Board from "../Components/Board";
 import Navbar from "../Components/Navbar";
-import Cover from "../Components/Cover";
 import "./../Assets/Game.css";
 import { Player } from "../Types/Piece";
 
@@ -13,26 +12,24 @@ export default function Game() {
     player: Player.NOTFILLED,
   });
 
-
-  
-
-
   return (
     <>
-       <Cover/>
       <Navbar
         setDifficulty={(diff: any) => {
           setDifficulty(diff);
         }}
       />
-     
-          <div className="welcomeMessage">
-              <span>Bonjour {localStorage.getItem('name')}, let's play ! </span>
-         </div>
-       
-
-
-
+      {gameOver.bool ? (
+        gameOver.player === Player.HUMAN ? (
+          <div className="instructions">You won.</div>
+        ) : (
+          <div className="instructions">You Lost.</div>
+        )
+      ) : currentPlayer === Player.HUMAN ? (
+        <div className="instructions">Your turn.</div>
+      ) : (
+        <div className="instructions">Ai turn.</div>
+      )}
 
       <Board
         difficulty={difficulty}
@@ -52,19 +49,6 @@ export default function Game() {
         currentPlayer={currentPlayer}
         gameOver={gameOver}
       />
-
-        {gameOver.bool ? (
-        gameOver.player === Player.HUMAN ? (
-          <div className="instructions">Vous avez gagné</div>
-        ) : (
-          <div className="instructions">Vous avez perdu</div>
-        )
-      ) : currentPlayer === Player.HUMAN ? (
-        <div className="instructions"><p>Votre tour</p></div>
-      ) : (
-        <div className="instructions">Au tour de IA </div>
-      )}
-
     </>
   );
 }

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import quartoGame from "./../Assets/quartoGame.png";
+import replay from "./../Assets/Rotate.png";
+import mute from "./../Assets/Mute.png";
 import "./../Assets/Navbar.css";
 
 export default function Navbar(props: any) {
@@ -10,13 +12,17 @@ export default function Navbar(props: any) {
     props.setDifficulty(number);
   };
   return (
-    <div className="navContainer">
-       <img alt="" src={quartoGame} className="logo" />
-      <div className="navcontent">
-      
+    <>
+      <img alt="" src={quartoGame} className="logo" />
+      <div className="grid xl:grid-cols-4 grid-cols-1 grid-rows-1 w-3/5 absolute right-10 top-14">
+        <div>
+          <button className="bigButton">Home</button>
+        </div>
+        <div>
+          <button className="bigButton">Rules</button>
+        </div>
         <div className="dropdown">
-          <button ><i className="fa-solid fa-ranking-star"></i></button>
-          <button></button>
+          <button className="bigButton">Difficulty</button>
           <div className="dropdown-content">
             <button
               className="LevelOne"
@@ -53,12 +59,15 @@ export default function Navbar(props: any) {
             </button>
           </div>
         </div>
-
-          <button onClick={()=> document.location.reload()}>
-            <i className="fa-solid fa-arrow-rotate-left"></i>
+        <div>
+          <button className="miniButton mt-1">
+            <img alt="" src={replay} className="replay pl-2" />
           </button>
+          <button className="miniButton ml-10">
+            <img alt="" src={mute} className="replay pl-2" />
+          </button>
+        </div>
       </div>
-    </div>
-     
+    </>
   );
 }
