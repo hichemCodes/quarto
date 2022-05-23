@@ -14,7 +14,6 @@
 .navContainer{
 width:234px;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 }
@@ -28,7 +27,10 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  position: absolute;
+  top: 80%;
+  left: 5%;
 }
 
 .logo {

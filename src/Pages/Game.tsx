@@ -25,25 +25,11 @@ export default function Game() {
           setDifficulty(diff);
         }}
       />
-      {gameOver.bool ? (
-        gameOver.player === Player.HUMAN ? (
+     
           <div className="welcomeMessage">
-              <span>Bonjour, {localStorage.getItem('name')} : Vous avez gagné</span>
+              <span>Bonjour {localStorage.getItem('name')}, let's play ! </span>
          </div>
-        ) : (
-          <div className="welcomeMessage">
-              <span>Bonjour, {localStorage.getItem('name')} : Vous avez perdu</span>
-          </div>
-        )
-      ) : currentPlayer === Player.HUMAN ? (
-         <div className="welcomeMessage">
-          <span>Bonjour, {localStorage.getItem('name')} : C'est ton tour</span>
-         </div>
-      ) : (
-          <div className="welcomeMessage">
-            <span>Bonjour, {localStorage.getItem('name')} : C'est le tour de l'ordinature</span>
-          </div>
-      )}
+       
 
 
 

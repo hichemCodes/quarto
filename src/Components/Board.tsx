@@ -1095,10 +1095,13 @@ export default function Board(props: any) {
       <div className="grid grid-cols-4 grid-rows-4 board" onClick={placePiece}>
         {rightBoardUI}
       </div>
-      {/*}
+
+
+
       <div className="selectedPieceContainer">
-        <span>Selected piece.</span>
-        <div className="ml-2 selectedPiece">
+        <span>Piece choisie</span>
+        <div className="ml-1 selectedPiece">
+
           <div className="pieceContainer">
             {pieceSelected.status === Status.SELECTED ? (
               <img alt="" src={pieceSelected.image} className="aPiece" />
@@ -1106,8 +1109,9 @@ export default function Board(props: any) {
           </div>
         </div>
       </div>
-            */}
-      
+
+
+
       <div
         className="grid grid-cols-4 grid-rows-4 pieces"
         onClick={selectPiece}
