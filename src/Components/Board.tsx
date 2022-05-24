@@ -195,10 +195,10 @@ export default function Board(props: any) {
       if (number % 2 === 0) {
         rightBoardUI.push(
           <div id={key} className="cellInv">
-            <span className="cellName">
+            {/*<span className="cellName">
               {horizontal[i]}
               {vertical[j]}
-            </span>
+              </span>*/}
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -207,10 +207,10 @@ export default function Board(props: any) {
       } else {
         rightBoardUI.push(
           <div id={key} className="cell">
-            <span className="cellName">
+            {/*<span className="cellName">
               {horizontal[i]}
               {vertical[j]}
-            </span>
+              </span>*/}
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}

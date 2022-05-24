@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import Cover from "../Components/Cover";
 import "./../Assets/Game.css";
 import { Player } from "../Types/Piece";
+import { Link } from "react-router-dom";
 
 export default function Game() {
   const [difficulty, setDifficulty] = useState(1);
@@ -19,6 +20,7 @@ export default function Game() {
 
   return (
     <>
+       <Link to="/regles"><i className="fa-solid fa-screwdriver-wrench"></i></Link>
        <Cover   setDifficulty={(diff: any) => {
           setDifficulty(diff);
         }}/>

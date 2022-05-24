@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import quartoGame from "./../Assets/quartoGame.png";
 import "./../Assets/Navbar.css";
+import swal from 'sweetalert';
 
 
 export default function Navbar(props: any) {
@@ -12,6 +13,25 @@ export default function Navbar(props: any) {
     setLevel(number);
     props.setDifficulty(number);
   };
+
+  const buttons: boolean = true;
+
+  const areYouSure = () => {
+    swal({
+      title: "Etes-vous sûr?",
+      text: "Attention vous pouvez pas revenir ",
+      icon: "warning",
+      //buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+         document.location.reload();
+      } else {
+        
+      }
+    });
+  }
 
   
 
@@ -63,7 +83,7 @@ export default function Navbar(props: any) {
          */}
        
 
-          <button onClick={()=> document.location.reload()}>
+          <button onClick={areYouSure}>
             <i className="fa-solid fa-arrow-rotate-left"></i>
           </button>
       </div>
