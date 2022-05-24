@@ -11,7 +11,7 @@ export default function Cover(props) {
   };
 
   useEffect(() => {
-    Swal.fire({
+    /*Swal.fire({
         title: 'Bonjour, veuillez saisir le niveau',
         input: 'text',
         inputAttributes: {
@@ -32,7 +32,15 @@ export default function Cover(props) {
 
 
         }
+      })*/
+      swal("Bonjour, veuillez saisir le niveau:", {
+         content: "input",
       })
+      .then((value) => {
+        handleLevelChange(parseInt(value));
+        document.getElementsByClassName('cover')[0].style.display = "none";
+        document.getElementsByClassName('welcomeMessage')[0].style.display = "block";
+      });
     
   },[]);
  
