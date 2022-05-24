@@ -1,4 +1,5 @@
 import Game from "../Pages/Game";
+import History from "../Pages/history";
 
 type routesType = {
   name: string;
@@ -13,5 +14,14 @@ const routes: routesType = [
     element: Game,
   }
 ];
+
+  const route: routesType = [
+    {
+       name: "history",
+       path: "/history",
+       element: history,
+     }
+    ];
+
 
 export default routes;
