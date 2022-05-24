@@ -4,7 +4,7 @@ import "./../Assets/Game.css";
 import quartoGame from "./../Assets/quartoGame.png";
 
 
-export default function regles() {
+export default function history() {
   const [difficulty, setDifficulty] = useState(1);
   
 
