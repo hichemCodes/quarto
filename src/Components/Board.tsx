@@ -163,19 +163,14 @@ export default function Board(props: any) {
   const { currentPlayer, difficulty, gameOver } = props;
   const [pieceSelected, setPieceSelected] = useState<Piece>(nullPiece);
 
-  // left board UI
   let leftBoardUI = [];
 
-  // left board state
   const [leftBoard, setLeftBoard] = useState({ board: initPieces() });
 
-  // Right board background
   let rightBoardUI = [];
 
-  // Right board state
   const [rightBoard, setRightBoard] = useState({ board: emptyBoard });
 
-  // Set right and left board background
   for (let i = 0; i < Config.ROWS_SIZE; i++) {
     for (let j = 0; j < Config.COLUMNS_SIZE; j++) {
       const number = j + i + 2;
@@ -195,10 +190,7 @@ export default function Board(props: any) {
       if (number % 2 === 0) {
         rightBoardUI.push(
           <div id={key} className="cellInv">
-            {/*<span className="cellName">
-              {horizontal[i]}
-              {vertical[j]}
-              </span>*/}
+            
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -207,10 +199,7 @@ export default function Board(props: any) {
       } else {
         rightBoardUI.push(
           <div id={key} className="cell">
-            {/*<span className="cellName">
-              {horizontal[i]}
-              {vertical[j]}
-              </span>*/}
+            
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -388,30 +377,24 @@ export default function Board(props: any) {
 
   function equals3(a: any, b: any, c: any, d: any) {
     let win = false;
-    // d khawya
     if (
       a.status === Status.PLACED &&
       b.status === Status.PLACED &&
       c.status === Status.PLACED
     ) {
       if (a.carac.color === b.carac.color && b.carac.color === c.carac.color) {
-        // console.log("equals3 : color");
         win = true;
       }
       if (a.carac.shape === b.carac.shape && b.carac.shape === c.carac.shape) {
-        // console.log("equals3 : shape");
         win = true;
       }
       if (a.carac.size === b.carac.size && b.carac.size === c.carac.size) {
-        // console.log("equals3 : size");
         win = true;
       }
       if (a.carac.hole === b.carac.hole && b.carac.hole === c.carac.hole) {
-        // console.log("equals3 : hole");
         win = true;
       }
     }
-    // a khawya
     if (
       d.status === Status.PLACED &&
       b.status === Status.PLACED &&
@@ -430,7 +413,6 @@ export default function Board(props: any) {
         win = true;
       }
     }
-    // b khawya
     if (
       a.status === Status.PLACED &&
       d.status === Status.PLACED &&
@@ -449,7 +431,6 @@ export default function Board(props: any) {
         win = true;
       }
     }
-    // c khawya
     if (
       a.status === Status.PLACED &&
       b.status === Status.PLACED &&
@@ -474,117 +455,88 @@ export default function Board(props: any) {
 
   function equals2(a: any, b: any, c: any, d: any) {
     let win = false;
-    // a et b
     if (a.status === Status.PLACED && Status.PLACED === b.status) {
       if (a.carac.color === b.carac.color) {
-        // console.log("equals2 : color");
         win = true;
       }
       if (a.carac.shape === b.carac.shape) {
-        // console.log("equals2 : shape");
         win = true;
       }
       if (a.carac.size === b.carac.size) {
-        // console.log("equals2 : size");
         win = true;
       }
       if (a.carac.hole === b.carac.hole) {
-        // console.log("equals2 : hole");
         win = true;
       }
     }
-    // b et c
     if (Status.PLACED === b.status && Status.PLACED === c.status) {
       if (b.carac.color === c.carac.color) {
-        // console.log("equals2 : color");
         win = true;
       }
       if (b.carac.shape === c.carac.shape) {
-        // console.log("equals2 : shape");
         win = true;
       }
       if (b.carac.size === c.carac.size) {
-        // console.log("equals2 : size");
         win = true;
       }
       if (b.carac.hole === c.carac.hole) {
-        // console.log("equals2 : hole");
         win = true;
       }
     }
-    // a et c
     if (Status.PLACED === a.status && Status.PLACED === c.status) {
       if (a.carac.color === c.carac.color) {
-        // console.log("equals2 : color");
         win = true;
       }
       if (a.carac.shape === c.carac.shape) {
-        // console.log("equals2 : shape");
         win = true;
       }
       if (a.carac.size === c.carac.size) {
-        // console.log("equals2 : size");
         win = true;
       }
       if (a.carac.hole === c.carac.hole) {
-        // console.log("equals2 : hole");
         win = true;
       }
     }
-    // a et d
     if (Status.PLACED === a.status && Status.PLACED === d.status) {
       if (a.carac.color === d.carac.color) {
-        // console.log("equals2 : color");
         win = true;
       }
       if (a.carac.shape === d.carac.shape) {
-        // console.log("equals2 : shape");
         win = true;
       }
       if (a.carac.size === d.carac.size) {
-        // console.log("equals2 : size");
         win = true;
       }
       if (a.carac.hole === d.carac.hole) {
-        // console.log("equals2 : hole");
         win = true;
       }
     }
-    // b et d
     if (Status.PLACED === b.status && Status.PLACED === d.status) {
       if (b.carac.color === d.carac.color) {
-        // console.log("equals2 : color");
         win = true;
       }
       if (b.carac.shape === d.carac.shape) {
-        // console.log("equals2 : shape");
         win = true;
       }
       if (b.carac.size === d.carac.size) {
-        // console.log("equals2 : size");
         win = true;
       }
       if (b.carac.hole === d.carac.hole) {
-        // console.log("equals2 : hole");
         win = true;
       }
     }
     // c et d
     if (Status.PLACED === c.status && Status.PLACED === d.status) {
       if (c.carac.color === d.carac.color) {
-        // console.log("equals2 : color");
         win = true;
       }
       if (c.carac.shape === d.carac.shape) {
-        // console.log("equals2 : shape");
         win = true;
       }
       if (c.carac.size === d.carac.size) {
-        // console.log("equals2 : size");
         win = true;
       }
       if (c.carac.hole === d.carac.hole) {
-        // console.log("equals2 : hole");
         win = true;
       }
     }
@@ -592,7 +544,6 @@ export default function Board(props: any) {
     return win;
   }
 
-  /*-------------get score--------------------------- */
 
   function getScore(argBoard: Piece[][], player: Player) {
     var score = 0;
@@ -673,7 +624,6 @@ export default function Board(props: any) {
         scBoard === rightBoard.board
       ) {
         props.setGameOver({ bool: true, player: player });
-        // console.log("setGameOver");
         return score;
       }
     }
@@ -748,7 +698,6 @@ export default function Board(props: any) {
       scBoard === rightBoard.board
     ) {
       props.setGameOver({ bool: true, player: player });
-      // console.log("setGameOver");
       return score;
     }
 
@@ -773,7 +722,6 @@ export default function Board(props: any) {
       scBoard === rightBoard.board
     ) {
       props.setGameOver({ bool: true, player: player });
-      // console.log("setGameOver");
       return score;
     }
 
@@ -822,7 +770,6 @@ export default function Board(props: any) {
             scBoard === rightBoard.board
           ) {
             props.setGameOver({ bool: true, player: player });
-            // console.log("setGameOver");
             return score;
           }
         }
@@ -874,7 +821,6 @@ export default function Board(props: any) {
             scBoard === rightBoard.board
           ) {
             props.setGameOver({ bool: true, player: player });
-            // console.log("setGameOver");
             return score;
           }
         }
@@ -927,7 +873,6 @@ export default function Board(props: any) {
             scBoard === rightBoard.board
           ) {
             props.setGameOver({ bool: true, player: player });
-            // console.log("setGameOver");
             return score;
           }
         }
@@ -954,11 +899,9 @@ export default function Board(props: any) {
         scBoard === rightBoard.board
       ) {
         props.setGameOver({ bool: true, player: player });
-        // console.log("setGameOver");
         return score;
       }
 
-      // Complexe Square 1
       var HumanInRow = 0,
         ComputerInRow = 0;
       if (equals2(scBoard[0][2], scBoard[1][0], scBoard[2][3], scBoard[3][1])) {
@@ -979,7 +922,6 @@ export default function Board(props: any) {
         scBoard === rightBoard.board
       ) {
         props.setGameOver({ bool: true, player: player });
-        // console.log("setGameOver");
         return score;
       }
     }
@@ -1017,7 +959,6 @@ export default function Board(props: any) {
       locPiece.y = j;
       locPiece.status = Status.PLACED;
       posBoard[i][j] = locPiece;
-      // console.log(posBoard);
       return posBoard;
     }
     return false;
@@ -1036,10 +977,8 @@ export default function Board(props: any) {
   ) {
     var nodes: Piece[][][] = [];
 
-    //Check all possible moves
     var player = maximizingPlayer ? Player.HUMAN : Player.AI;
 
-    // Play a move
     if (pieceSelected !== nullPiece) {
       rightBoard.board.forEach((prow: Piece[], i: number) => {
         prow.forEach((p: Piece, j: number) => {
@@ -1052,8 +991,6 @@ export default function Board(props: any) {
         });
       });
 
-      console.log("Possible moves");
-      console.log(nodes);
 
       let currentScore = getScore(rightBoard.board, currentPlayer);
       let aiMove: Piece[][] = cloneDeep(emptyBoard3);
@@ -1064,7 +1001,6 @@ export default function Board(props: any) {
           getScore(board, currentPlayer) >= Config.WINNING_SCORE
         ) {
           console.log(getScore(board, currentPlayer));
-          console.log("Winnig move");
           props.setGameOver({ bool: true, player: player });
           console.dir(board);
           aiMove = cloneDeep(board);
@@ -1081,96 +1017,10 @@ export default function Board(props: any) {
       setRightBoard({ board: aiMove });
       setPieceSelected({ ...pieceSelected, status: Status.PLACED });
 
-      /*
-      let currentScore = getScore(rightBoard.board);
-      let aiMove: Piece[][] = cloneDeep(emptyBoard3);
-      let done: boolean = false;
-      psNodes.forEach((board: Piece[][]) => {
-        if (
-          getScore(board) <= -Config.WINNING_SCORE ||
-          getScore(board) >= Config.WINNING_SCORE
-        ) {
-          console.log(getScore(board));
-          console.log("Winnig move");
-          console.dir(board);
-          aiMove = cloneDeep(board);
-          done = true;
-        } else {
-          if (!done) {
-            console.log("I went fcking there");
-            console.log("This board score is : " + getScore(board));
-            console.log("Current score : " + currentScore);
-            if (getScore(board) <= currentScore) {
-              currentScore = getScore(board);
-              aiMove = cloneDeep(board);
-            }
-          }
-        }
-      });
-      setRightBoard({ board: aiMove });
-      setPieceSelected(nullPiece);
-      */
+     
     }
 
-    /*
-      var isDrawn = nodes.length == 0;
-
-    if (
-      depth == 0 ||
-      isDrawn ||
-      currentScore <= -Config.WINNING_SCORE ||
-      currentScore >= Config.WINNING_SCORE
-    ) {
-      console.log("isDrawn");
-      var leaf = {
-        boardMove: emptyBoard,
-        score: currentScore,
-      };
-      return leaf;
-    }
-
-    if (maximizingPlayer) {
-      var v = {
-        boardMove: cloneDeep(rightBoard.board),
-        score: -99999,
-      };
-      for (var i = 0; i <= nodes.length - 1; i++) {
-        if (!nodes[i]) continue;
-        var nextmove = MinMax(nodes[i], depth - 1, a, b, false);
-        if (nextmove.score > v.score || v.boardMove == null) {
-          v.boardMove = nextmove.boardMove;
-          v.score = nextmove.score;
-        }
-        a = max(a, nextmove);
-        if (b.score <= a.score) {
-          break; //(* b cut-off *)
-        }
-      }
-      return v;
-    } else {
-      var v = {
-        boardMove: cloneDeep(rightBoard.board),
-        score: 99999,
-      };
-      for (var i = 0; i <= nodes.length - 1; i++) {
-        if (!nodes[i]) continue;
-        var nextmove = MinMax(nodes[i], depth - 1, a, b, true);
-        if (nextmove.score < v.score || v.boardMove == null) {
-          v.boardMove = nextmove.boardMove;
-          v.score = nextmove.score;
-        }
-        b = min(b, nextmove);
-        if (b.score <= a.score) {
-          break; //(* a cut-off *)
-        }
-      }
-      console.log("Minmax boardMove");
-      console.dir(v.boardMove);
-      console.log("Minmax score" + v.score);
-
-      return v;
-    }
-    */
+    
   }
 
   function MinMaxChoosePiece(
@@ -1180,14 +1030,11 @@ export default function Board(props: any) {
     b: any,
     maximizingPlayer: boolean
   ) {
-    // Choose a piece
     let remainingPieces = getRemainingPieces();
-    // let psNodes: Piece[][][] = [];
     let chosenPiece = {
       piece: cloneDeep(nullPiece),
       score: -100,
     };
-    console.log("remainingPieces");
     console.dir(pieceSelected);
 
     if (pieceSelected.status === Status.PLACED) {
@@ -1211,14 +1058,12 @@ export default function Board(props: any) {
         });
       });
 
-      console.log("remainingPieces");
       console.dir(remainingPieces);
       var min = remainingPieces.reduce(function (prev, curr) {
         return prev.score < curr.score ? prev : curr;
       });
 
       min.piece.status = Status.SELECTED;
-      console.log("Selected piece is : ");
       console.dir(min);
       if (min.piece.image != null) {
         let ij = min.piece.image;
