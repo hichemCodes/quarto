@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Piece,
   Status,
+  Niv,
   Shape,
   Size,
   Color,
@@ -194,12 +195,10 @@ export default function Board(props: any) {
       if (number % 2 === 0) {
         rightBoardUI.push(
           <div id={key} className="cellInv">
-            {/*}
             <span className="cellName">
               {horizontal[i]}
               {vertical[j]}
             </span>
-        */}
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -208,12 +207,10 @@ export default function Board(props: any) {
       } else {
         rightBoardUI.push(
           <div id={key} className="cell">
-            {/*}
             <span className="cellName">
               {horizontal[i]}
               {vertical[j]}
             </span>
-            */}
             {imageBoard ? (
               <img alt={key} src={imageBoard} className="aPiece" />
             ) : null}
@@ -632,6 +629,8 @@ export default function Board(props: any) {
     }
 
     //Check ROWS Columns and diags
+
+    // ROWS
     for (var row = 0; row < 4; row++) {
       var HumanInRow = 0,
         ComputerInRow = 0;
@@ -668,13 +667,6 @@ export default function Board(props: any) {
         if (player === Player.HUMAN) HumanInRow = 4;
         else ComputerInRow = 4;
       }
-      // console.log("Human mn be3d : " + HumanInRow);
-      /* console.log(
-        "score taysawi : " +
-          score +
-          "ghaytzad b : " +
-          updateScore(HumanInRow, ComputerInRow)
-      ); */
       score += updateScore(HumanInRow, ComputerInRow);
       if (
         (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
@@ -686,11 +678,10 @@ export default function Board(props: any) {
       }
     }
 
+    // COLUMNS
     for (var col = 0; col < 4; col++) {
       var HumanInRow = 0,
         ComputerInRow = 0;
-      //// console.log("hawhaw : row : " + row + "column : " + column + "offset : " + offset)
-
       if (
         equals2(
           scBoard[0][col],
@@ -724,12 +715,6 @@ export default function Board(props: any) {
         if (player === Player.HUMAN) HumanInRow = 4;
         else ComputerInRow = 4;
       }
-      /* console.log(
-        "score taysawi : " +
-          score +
-          "ghaytzad b : " +
-          updateScore(HumanInRow, ComputerInRow)
-      ); */
       score += updateScore(HumanInRow, ComputerInRow);
       if (
         (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
@@ -741,6 +726,7 @@ export default function Board(props: any) {
       }
     }
 
+    // DIAG 1
     var HumanInRow = 0,
       ComputerInRow = 0;
 
@@ -756,13 +742,6 @@ export default function Board(props: any) {
       if (player === Player.HUMAN) HumanInRow = 4;
       else ComputerInRow = 4;
     }
-
-    /* console.log(
-      "score taysawi : " +
-        score +
-        "ghaytzad b : " +
-        updateScore(HumanInRow, ComputerInRow)
-    ); */
     score += updateScore(HumanInRow, ComputerInRow);
     if (
       (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
@@ -773,10 +752,9 @@ export default function Board(props: any) {
       return score;
     }
 
+    // DIAG 2
     var HumanInRow = 0,
       ComputerInRow = 0;
-    //// console.log("hawhaw : row : " + row + "column : " + column + "offset : " + offset)
-
     if (equals2(scBoard[0][3], scBoard[1][2], scBoard[2][1], scBoard[3][0])) {
       if (player === Player.HUMAN) HumanInRow = 2;
       else ComputerInRow = 2;
@@ -789,12 +767,6 @@ export default function Board(props: any) {
       if (player === Player.HUMAN) HumanInRow = 4;
       else ComputerInRow = 4;
     }
-    /* console.log(
-      "score taysawi : " +
-        score +
-        "ghaytzad b : " +
-        updateScore(HumanInRow, ComputerInRow)
-    ); */
     score += updateScore(HumanInRow, ComputerInRow);
     if (
       (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
@@ -803,6 +775,213 @@ export default function Board(props: any) {
       props.setGameOver({ bool: true, player: player });
       // console.log("setGameOver");
       return score;
+    }
+
+    // DIFF = NIV 2
+    if (difficulty !== Niv.NIV1) {
+      for (var row = 0; row < 3; row++) {
+        for (var col = 0; col < 3; col++) {
+          var HumanInRow = 0,
+            ComputerInRow = 0;
+          if (
+            equals2(
+              scBoard[row][col],
+              scBoard[row][col + 1],
+              scBoard[row + 1][col],
+              scBoard[row + 1][col + 1]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 2;
+            else ComputerInRow = 2;
+          }
+          if (
+            equals3(
+              scBoard[row][col],
+              scBoard[row][col + 1],
+              scBoard[row + 1][col],
+              scBoard[row + 1][col + 1]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 3;
+            else ComputerInRow = 3;
+          }
+          if (
+            equals4(
+              scBoard[row][col],
+              scBoard[row][col + 1],
+              scBoard[row + 1][col],
+              scBoard[row + 1][col + 1]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 4;
+            else ComputerInRow = 4;
+          }
+          score += updateScore(HumanInRow, ComputerInRow);
+          if (
+            (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
+            scBoard === rightBoard.board
+          ) {
+            props.setGameOver({ bool: true, player: player });
+            // console.log("setGameOver");
+            return score;
+          }
+        }
+      }
+    }
+
+    // DIFF = NIV 3
+    if (difficulty === Niv.NIV3 || difficulty === Niv.NIV4) {
+      for (var row = 0; row < 2; row++) {
+        for (var col = 0; col < 2; col++) {
+          var HumanInRow = 0,
+            ComputerInRow = 0;
+          if (
+            equals2(
+              scBoard[row][col],
+              scBoard[row][col + 2],
+              scBoard[row + 2][col],
+              scBoard[row + 2][col + 2]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 2;
+            else ComputerInRow = 2;
+          }
+          if (
+            equals3(
+              scBoard[row][col],
+              scBoard[row][col + 2],
+              scBoard[row + 2][col],
+              scBoard[row + 2][col + 2]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 3;
+            else ComputerInRow = 3;
+          }
+          if (
+            equals4(
+              scBoard[row][col],
+              scBoard[row][col + 2],
+              scBoard[row + 2][col],
+              scBoard[row + 2][col + 2]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 4;
+            else ComputerInRow = 4;
+          }
+          score += updateScore(HumanInRow, ComputerInRow);
+          if (
+            (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
+            scBoard === rightBoard.board
+          ) {
+            props.setGameOver({ bool: true, player: player });
+            // console.log("setGameOver");
+            return score;
+          }
+        }
+      }
+    }
+
+    // DIFF = NIV 4
+    if (difficulty === Niv.NIV4) {
+      // Simple square
+      for (var row = 0; row < 2; row++) {
+        for (var col = 1; col < 3; col++) {
+          var HumanInRow = 0,
+            ComputerInRow = 0;
+          if (
+            equals2(
+              scBoard[row][col + 1],
+              scBoard[row + 1][col - 1],
+              scBoard[row + 1][col + 1],
+              scBoard[row + 2][col]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 2;
+            else ComputerInRow = 2;
+          }
+          if (
+            equals3(
+              scBoard[row][col + 1],
+              scBoard[row + 1][col - 1],
+              scBoard[row + 1][col + 1],
+              scBoard[row + 2][col]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 3;
+            else ComputerInRow = 3;
+          }
+          if (
+            equals4(
+              scBoard[row][col + 1],
+              scBoard[row + 1][col - 1],
+              scBoard[row + 1][col + 1],
+              scBoard[row + 2][col]
+            )
+          ) {
+            if (player === Player.HUMAN) HumanInRow = 4;
+            else ComputerInRow = 4;
+          }
+          score += updateScore(HumanInRow, ComputerInRow);
+          if (
+            (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
+            scBoard === rightBoard.board
+          ) {
+            props.setGameOver({ bool: true, player: player });
+            // console.log("setGameOver");
+            return score;
+          }
+        }
+      }
+
+      // Complexe Square 1
+      var HumanInRow = 0,
+        ComputerInRow = 0;
+      if (equals2(scBoard[0][1], scBoard[1][3], scBoard[2][0], scBoard[3][2])) {
+        if (player === Player.HUMAN) HumanInRow = 2;
+        else ComputerInRow = 2;
+      }
+      if (equals3(scBoard[0][1], scBoard[1][3], scBoard[2][0], scBoard[3][2])) {
+        if (player === Player.HUMAN) HumanInRow = 3;
+        else ComputerInRow = 3;
+      }
+      if (equals4(scBoard[0][1], scBoard[1][3], scBoard[2][0], scBoard[3][2])) {
+        if (player === Player.HUMAN) HumanInRow = 4;
+        else ComputerInRow = 4;
+      }
+      score += updateScore(HumanInRow, ComputerInRow);
+      if (
+        (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
+        scBoard === rightBoard.board
+      ) {
+        props.setGameOver({ bool: true, player: player });
+        // console.log("setGameOver");
+        return score;
+      }
+
+      // Complexe Square 1
+      var HumanInRow = 0,
+        ComputerInRow = 0;
+      if (equals2(scBoard[0][2], scBoard[1][0], scBoard[2][3], scBoard[3][1])) {
+        if (player === Player.HUMAN) HumanInRow = 2;
+        else ComputerInRow = 2;
+      }
+      if (equals3(scBoard[0][2], scBoard[1][0], scBoard[2][3], scBoard[3][1])) {
+        if (player === Player.HUMAN) HumanInRow = 3;
+        else ComputerInRow = 3;
+      }
+      if (equals4(scBoard[0][2], scBoard[1][0], scBoard[2][3], scBoard[3][1])) {
+        if (player === Player.HUMAN) HumanInRow = 4;
+        else ComputerInRow = 4;
+      }
+      score += updateScore(HumanInRow, ComputerInRow);
+      if (
+        (score <= -Config.WINNING_SCORE || score >= Config.WINNING_SCORE) &&
+        scBoard === rightBoard.board
+      ) {
+        props.setGameOver({ bool: true, player: player });
+        // console.log("setGameOver");
+        return score;
+      }
     }
 
     return score;
@@ -1088,6 +1267,7 @@ export default function Board(props: any) {
         );
     }
   }, [pieceSelected]);
+
 
   return (
     <div className="boardContainer">

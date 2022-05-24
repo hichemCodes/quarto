@@ -1,11 +1,18 @@
 import React, { useState,useEffect } from "react";
 import "./../Assets/Navbar.css";
 
-export default function Cover() {
+export default function Cover(props) {
+  const [level, setLevel] = useState(1);
+
+
+  const handleLevelChange = (number) => {
+    setLevel(number);
+    props.setDifficulty(number);
+  };
 
   useEffect(() => {
     Swal.fire({
-        title: 'Veuillez saisir votre nom avant de jouer',
+        title: 'Bonjour, veuillez saisir le niveau',
         input: 'text',
         inputAttributes: {
           autocapitalize: 'off'
@@ -13,7 +20,7 @@ export default function Cover() {
         confirmButtonText: 'Commancer',
         showLoaderOnConfirm: true,
         preConfirm: (name) => {
-            localStorage.setItem('name',name);
+            handleLevelChange(parseInt(name));
         },
         allowOutsideClick: () => !Swal.isLoading()
       }).then((result) => {

@@ -2,20 +2,27 @@ import React, { useState } from "react";
 import quartoGame from "./../Assets/quartoGame.png";
 import "./../Assets/Navbar.css";
 
+
 export default function Navbar(props: any) {
   const [level, setLevel] = useState(1);
+  const [showModal, setShowModal] = React.useState(false);
+
 
   const handleLevelChange = (number: number) => {
     setLevel(number);
     props.setDifficulty(number);
   };
+
+  
+
   return (
     <div className="navContainer">
+
        <img alt="" src={quartoGame} className="logo" />
       <div className="navcontent">
-      
-        <div className="dropdown">
-          <button ><i className="fa-solid fa-ranking-star"></i></button>
+        {/*
+                    <div className="dropdown">
+          <button data-modal-toggle="defaultModal"><i className="fa-solid fa-ranking-star" ></i></button>
           <button></button>
           <div className="dropdown-content">
             <button
@@ -53,11 +60,15 @@ export default function Navbar(props: any) {
             </button>
           </div>
         </div>
+         */}
+       
 
           <button onClick={()=> document.location.reload()}>
             <i className="fa-solid fa-arrow-rotate-left"></i>
           </button>
       </div>
+
+     
     </div>
      
   );

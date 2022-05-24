@@ -19,7 +19,9 @@ export default function Game() {
 
   return (
     <>
-       <Cover/>
+       <Cover   setDifficulty={(diff: any) => {
+          setDifficulty(diff);
+        }}/>
       <Navbar
         setDifficulty={(diff: any) => {
           setDifficulty(diff);
@@ -27,7 +29,7 @@ export default function Game() {
       />
      
           <div className="welcomeMessage">
-              <span>Bonjour {localStorage.getItem('name')}, let's play ! </span>
+              <span>Niveau :  {difficulty} </span>
          </div>
        
 

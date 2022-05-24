@@ -14,17 +14,17 @@
 .welcomeMessage{
   position: absolute;
   font-size: 2.5rem;
-  top: 30px;
-  left:0;
-  right:0;
+  
 
   margin-left: auto;
   margin-right: auto;
 
   position: absolute;
-  width: 40%;
   color: #793a1b;
   display: none;
+  left: 50%;
+  top: 6%;
+  transform: translate(-50%,-50%);
 }
 
 
@@ -48,6 +48,10 @@
   border: 4px solid #793a1b;
 }
 
+.cellInv img,.cell img {
+  transform: rotate3d(300, -12, 8, -211deg);
+}
+
 .cellName {
   position: absolute;
   padding-left: 7px;
@@ -64,9 +68,15 @@
 }
 
 .board {
-  width: 78vh !important;
+  width: 82vh !important;
   height: 77vh !important;
-  transform:perspective(var(--p, 1029px)) rotateX(var(--x, 62deg)) rotateY(var(--y, 0deg)) rotateZ(var(--z, 143deg)) translate3d(var(--tx, 0px), var(--ty, 0px), var(--tz, 19px));
+  /*transform:perspective(var(--p, 1029px)) rotateX(var(--x, 62deg)) rotateY(var(--y, 0deg)) rotateZ(var(--z, 143deg)) translate3d(var(--tx, 0px), var(--ty, 0px), var(--tz, 19px));
+  */transform: perspective(var(--p, 1029px)) rotateX(var(--x, 39deg)) rotateY(var(--y, 0deg)) rotateZ(var(--z, 179deg)) translate3d(var(--tx, 0px), var(--ty, 0px), var(--tz, 39px))
+}
+
+.board:nth-child(4n) img {
+  transform: rotate3d(300, -12, 8, -211deg);
+
 }
 
 .pieceContainer {
