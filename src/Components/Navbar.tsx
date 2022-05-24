@@ -40,49 +40,8 @@ export default function Navbar(props: any) {
 
        <img alt="" src={quartoGame} className="logo" />
       <div className="navcontent">
-        {/*
-                    <div className="dropdown">
-          <button data-modal-toggle="defaultModal"><i className="fa-solid fa-ranking-star" ></i></button>
-          <button></button>
-          <div className="dropdown-content">
-            <button
-              className="LevelOne"
-              onClick={() => {
-                handleLevelChange(1);
-              }}
-              disabled={level === 1 ? true : false}
-            >
-              Level 1
-            </button>
-            <button
-              onClick={() => {
-                handleLevelChange(2);
-              }}
-              disabled={level === 2 ? true : false}
-            >
-              Level 2
-            </button>
-            <button
-              onClick={() => {
-                handleLevelChange(3);
-              }}
-              disabled={level === 3 ? true : false}
-            >
-              Level 3
-            </button>
-            <button
-              onClick={() => {
-                handleLevelChange(4);
-              }}
-              disabled={level === 4 ? true : false}
-            >
-              Level 4
-            </button>
-          </div>
-        </div>
-         */}
+        {}
        
-
           <button onClick={areYouSure}>
             <i className="fa-solid fa-arrow-rotate-left"></i>
           </button>
