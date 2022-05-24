@@ -23,7 +23,16 @@
    font-size: 2.5rem;
    position: absolute;
    top: 20px;
-   right: 30px;
+   right: 60px;
    cursor: pointer;
 
+}
+
+.fa-book-open {
+  color: #793a1b;
+   font-size: 2.5rem;
+   position: absolute;
+   top: 20px;
+   right: 120px;
+   cursor: pointer;
 }

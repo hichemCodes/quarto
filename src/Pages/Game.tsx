@@ -3,6 +3,7 @@ import Board from "../Components/Board";
 import Navbar from "../Components/Navbar";
 import Cover from "../Components/Cover";
 import "./../Assets/Game.css";
+
 import { Player } from "../Types/Piece";
 import { Link } from "react-router-dom";
 
@@ -20,7 +21,9 @@ export default function Game() {
 
   return (
     <>
-       <Link to="/regles"><i className="fa-solid fa-screwdriver-wrench"></i></Link>
+      
+       <Link to="/history" target="_blank"> <i className="fa-solid fa-book-open"></i></Link>
+       <Link to="/regles" target="_blank"><i className="fa-solid fa-screwdriver-wrench"></i></Link>
        <Cover   setDifficulty={(diff: any) => {
           setDifficulty(diff);
         }}/>

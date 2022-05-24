@@ -1,0 +1,26 @@
+
+body {
+    overflow: hidden;
+}
+.tab-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.8% ;
+    background: #ffffff59;
+    margin-top: 3rem;
+
+}
+
+table,th,td,.border-b {
+    border: none;
+}
+
+th{
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+tr {
+    margin-bottom: 1.5rem !important;
+}
